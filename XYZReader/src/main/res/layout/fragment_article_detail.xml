@@ -9,18 +9,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <FrameLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <FrameLayout
                 android:id="@+id/photo_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/photo_placeholder">
+                android:background="@color/photo_placeholder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
                 <!--suppress AndroidLintContentDescription -->
                 <ImageView
                     android:id="@+id/photo"
+                    android:scaleType="centerCrop"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
@@ -35,11 +39,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/detail_card_top_margin"
                 android:background="#fff"
                 android:elevation="2dp"
                 android:maxWidth="@dimen/detail_card_max_width"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/photo_container">
 
                 <LinearLayout
                     android:id="@+id/meta_bar"
@@ -88,7 +94,7 @@
                     android:textSize="@dimen/detail_body_text_size" />
 
             </com.example.xyzreader.ui.MaxWidthLinearLayout>
-        </FrameLayout>
+        </android.support.constraint.ConstraintLayout>
     </com.example.xyzreader.ui.ObservableScrollView>
 
     <android.support.design.widget.FloatingActionButton
