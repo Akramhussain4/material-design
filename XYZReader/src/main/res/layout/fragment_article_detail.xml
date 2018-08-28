@@ -21,8 +21,8 @@
                 <!--suppress AndroidLintContentDescription -->
                 <ImageView
                     android:id="@+id/photo"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
                 <View
                     android:layout_width="match_parent"
@@ -83,7 +83,7 @@
                     android:layout_marginRight="@dimen/detail_inner_horiz_margin"
                     android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
                     android:paddingBottom="@dimen/detail_body_bottom_margin"
-                    android:textColor="@color/ltgray"
+                    android:textColor="#000"
                     android:textColorLink="@color/theme_accent"
                     android:textSize="@dimen/detail_body_text_size" />
 
@@ -93,12 +93,12 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/share_fab"
-        android:layout_width="45dp"
-        android:stateListAnimator="@anim/fab_state_list_anim"
-        android:layout_height="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/fab_margin"
         android:layout_gravity="bottom|end"
-        android:clickable="true"
-        android:layout_marginRight="@dimen/fab_margin"
+        android:focusable="true"
+        android:stateListAnimator="@animator/fab_state_list_anim"
         android:layout_marginBottom="@dimen/fab_margin"
         android:elevation="@dimen/fab_elevation"
         app:srcCompat="@drawable/ic_share" />
